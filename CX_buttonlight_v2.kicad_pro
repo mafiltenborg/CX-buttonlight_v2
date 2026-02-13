@@ -611,7 +611,7 @@
           "group_by": false,
           "label": "LCSC Part #",
           "name": "LCSC Part #",
-          "show": false
+          "show": true
         }
       ],
       "filter_string": "",

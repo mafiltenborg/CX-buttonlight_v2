@@ -249,6 +249,139 @@
 				)
 			)
 		)
+		(symbol "Device:Fuse"
+			(pin_numbers hide)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "F"
+				(at 2.032 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Fuse"
+				(at -1.905 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at -1.778 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Fuse"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "fuse"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "*Fuse*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Fuse_0_1"
+				(rectangle
+					(start -0.762 -2.54)
+					(end 0.762 2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Fuse_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "Device:LED"
 			(pin_numbers hide)
 			(pin_names
@@ -1080,13 +1213,13 @@
 		)
 	)
 	(junction
-		(at 55.88 69.85)
+		(at 39.37 69.85)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "501003ca-d36e-4c39-a92e-ed1492ee2dc2")
 	)
 	(junction
-		(at 55.88 95.25)
+		(at 39.37 95.25)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "63d5464b-db74-44da-b5b2-28d01f25b5cd")
@@ -1175,7 +1308,7 @@
 	)
 	(wire
 		(pts
-			(xy 55.88 69.85) (xy 77.47 69.85)
+			(xy 39.37 69.85) (xy 53.34 69.85)
 		)
 		(stroke
 			(width 0)
@@ -1195,7 +1328,7 @@
 	)
 	(wire
 		(pts
-			(xy 55.88 95.25) (xy 77.47 95.25)
+			(xy 39.37 95.25) (xy 77.47 95.25)
 		)
 		(stroke
 			(width 0)
@@ -1252,6 +1385,16 @@
 			(type default)
 		)
 		(uuid "d38a4ec9-221c-4b29-b7db-1b1c91443442")
+	)
+	(wire
+		(pts
+			(xy 60.96 69.85) (xy 77.47 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d783c05b-bde0-4ab4-a7ed-70b613d1d08d")
 	)
 	(wire
 		(pts
@@ -1319,9 +1462,9 @@
 		)
 		(uuid "29c24015-f7de-4dbc-be83-fde1ea04988e")
 	)
-	(text "R2 values:\n560R - E12 conservative choice with minimal heat dissipation\n576R - E96 more heat, a bit more light\n590R - E96 even more heat, go no higher."
+	(text "R2 values:\n510R - E24 conservative choice with minimal heat dissipation (6 mA)\n536R - E48 Medium choice\n560R - E12 more heat, a bit more light (15 mA)\n576R - E96 Go no higher\n"
 		(exclude_from_sim yes)
-		(at 152.146 114.3 0)
+		(at 188.468 111.506 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1329,6 +1472,16 @@
 			(justify left)
 		)
 		(uuid "4ff3c6db-70ac-47f8-9a23-0846c6f2ad51")
+	)
+	(text "Vout = 1.25 * (1 + R2/R1)"
+		(exclude_from_sim no)
+		(at 138.43 109.22 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "941209f0-2a87-4098-ae7c-1fdde54f41e1")
 	)
 	(text "Lysgivere"
 		(exclude_from_sim no)
@@ -1352,7 +1505,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 55.88 95.25 180)
+		(at 39.37 95.25 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1360,7 +1513,7 @@
 		(dnp yes)
 		(uuid "03953475-f9bb-49f7-bb94-bb8ee6beeed9")
 		(property "Reference" "TP3"
-			(at 59.69 98.806 0)
+			(at 43.18 98.806 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1368,7 +1521,7 @@
 			)
 		)
 		(property "Value" "TestPoint"
-			(at 52.6381 98.552 90)
+			(at 36.1281 98.552 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1377,7 +1530,7 @@
 			)
 		)
 		(property "Footprint" "TestPoint:TestPoint_THTPad_D1.5mm_Drill0.7mm"
-			(at 50.8 95.25 0)
+			(at 34.29 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1386,7 +1539,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 50.8 95.25 0)
+			(at 34.29 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1395,7 +1548,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 55.88 95.25 0)
+			(at 39.37 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1404,7 +1557,7 @@
 			)
 		)
 		(property "LCSC Part #" ""
-			(at 55.88 95.25 0)
+			(at 39.37 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1492,7 +1645,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 55.88 69.85 90)
+		(at 39.37 69.85 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1500,7 +1653,7 @@
 		(dnp yes)
 		(uuid "31168fdf-0c43-42a9-b619-6b6f7df599ae")
 		(property "Reference" "Supply1"
-			(at 51.562 66.04 90)
+			(at 35.052 66.04 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1509,7 +1662,7 @@
 			)
 		)
 		(property "Value" "12V"
-			(at 46.736 69.85 90)
+			(at 30.226 69.85 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1517,7 +1670,7 @@
 			)
 		)
 		(property "Footprint" "TestPoint:TestPoint_THTPad_D1.5mm_Drill0.7mm"
-			(at 55.88 64.77 0)
+			(at 39.37 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1526,7 +1679,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 55.88 64.77 0)
+			(at 39.37 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1535,7 +1688,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 55.88 69.85 0)
+			(at 39.37 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1544,7 +1697,7 @@
 			)
 		)
 		(property "Sim.Device" ""
-			(at 55.88 69.85 0)
+			(at 39.37 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1553,7 +1706,7 @@
 			)
 		)
 		(property "Sim.Pins" ""
-			(at 55.88 69.85 0)
+			(at 39.37 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1562,7 +1715,7 @@
 			)
 		)
 		(property "LCSC Part #" ""
-			(at 55.88 69.85 0)
+			(at 39.37 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1772,7 +1925,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 55.88 95.25 0)
+		(at 39.37 95.25 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1780,7 +1933,7 @@
 		(dnp yes)
 		(uuid "46170377-0474-4456-a2a7-8601d4611405")
 		(property "Reference" "TP4"
-			(at 57.658 91.948 0)
+			(at 41.148 91.948 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1789,7 +1942,7 @@
 			)
 		)
 		(property "Value" "TestPoint"
-			(at 57.785 93.2179 0)
+			(at 41.275 93.2179 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1799,7 +1952,7 @@
 			)
 		)
 		(property "Footprint" "TestPoint:TestPoint_THTPad_D1.5mm_Drill0.7mm"
-			(at 60.96 95.25 0)
+			(at 44.45 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1808,7 +1961,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 60.96 95.25 0)
+			(at 44.45 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1817,7 +1970,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 55.88 95.25 0)
+			(at 39.37 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1826,7 +1979,7 @@
 			)
 		)
 		(property "LCSC Part #" ""
-			(at 55.88 95.25 0)
+			(at 39.37 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1848,7 +2001,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 55.88 69.85 0)
+		(at 39.37 69.85 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1856,7 +2009,7 @@
 		(dnp yes)
 		(uuid "4f03d57b-9235-465c-92cd-f06935ff6582")
 		(property "Reference" "TP2"
-			(at 58.166 66.548 0)
+			(at 41.656 66.548 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1865,7 +2018,7 @@
 			)
 		)
 		(property "Value" "TestPoint"
-			(at 58.42 67.8179 0)
+			(at 41.91 67.8179 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1875,7 +2028,7 @@
 			)
 		)
 		(property "Footprint" "TestPoint:TestPoint_THTPad_D1.5mm_Drill0.7mm"
-			(at 60.96 69.85 0)
+			(at 44.45 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1884,7 +2037,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 60.96 69.85 0)
+			(at 44.45 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1893,7 +2046,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 55.88 69.85 0)
+			(at 39.37 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1902,7 +2055,7 @@
 			)
 		)
 		(property "LCSC Part #" ""
-			(at 55.88 69.85 0)
+			(at 39.37 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2220,7 +2373,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 55.88 69.85 180)
+		(at 39.37 69.85 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2228,7 +2381,7 @@
 		(dnp yes)
 		(uuid "83fd0545-eb3d-45fb-8e23-9df7003920e3")
 		(property "Reference" "TP1"
-			(at 58.42 73.406 0)
+			(at 41.91 73.406 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2237,7 +2390,7 @@
 			)
 		)
 		(property "Value" "TestPoint"
-			(at 58.42 74.4219 0)
+			(at 41.91 74.4219 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2247,7 +2400,7 @@
 			)
 		)
 		(property "Footprint" "TestPoint:TestPoint_THTPad_D1.5mm_Drill0.7mm"
-			(at 50.8 69.85 0)
+			(at 34.29 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2256,7 +2409,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 50.8 69.85 0)
+			(at 34.29 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2265,7 +2418,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 55.88 69.85 0)
+			(at 39.37 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2274,7 +2427,7 @@
 			)
 		)
 		(property "LCSC Part #" ""
-			(at 55.88 69.85 0)
+			(at 39.37 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2428,7 +2581,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 55.88 95.25 90)
+		(at 39.37 95.25 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2436,7 +2589,7 @@
 		(dnp yes)
 		(uuid "9e5084b4-4e38-472d-b1dc-6ffd1428bb7d")
 		(property "Reference" "Ground1"
-			(at 58.42 95.25 90)
+			(at 41.91 95.25 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2445,7 +2598,7 @@
 			)
 		)
 		(property "Value" "Ground"
-			(at 46.482 95.25 90)
+			(at 29.972 95.25 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2453,7 +2606,7 @@
 			)
 		)
 		(property "Footprint" "TestPoint:TestPoint_THTPad_D1.5mm_Drill0.7mm"
-			(at 55.88 90.17 0)
+			(at 39.37 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2462,7 +2615,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 55.88 90.17 0)
+			(at 39.37 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2471,7 +2624,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 55.88 95.25 0)
+			(at 39.37 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2480,7 +2633,7 @@
 			)
 		)
 		(property "Sim.Device" ""
-			(at 55.88 95.25 0)
+			(at 39.37 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2489,7 +2642,7 @@
 			)
 		)
 		(property "Sim.Pins" ""
-			(at 55.88 95.25 0)
+			(at 39.37 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2498,7 +2651,7 @@
 			)
 		)
 		(property "LCSC Part #" ""
-			(at 55.88 95.25 0)
+			(at 39.37 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2535,7 +2688,7 @@
 				)
 			)
 		)
-		(property "Value" "560R"
+		(property "Value" "536R"
 			(at 153.416 88.9 90)
 			(effects
 				(font
@@ -2706,6 +2859,74 @@
 			(project ""
 				(path "/a6c7f972-13d1-471d-8078-ec61320b86a9"
 					(reference "U1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:Fuse")
+		(at 57.15 69.85 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "bd96d3cd-3acd-42e2-954e-e00f22d6aac4")
+		(property "Reference" "F1"
+			(at 57.15 63.5 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Fuse"
+			(at 57.15 66.04 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Fuse:Fuse_0805_2012Metric_Pad1.15x1.40mm_HandSolder"
+			(at 57.15 71.628 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 57.15 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Fuse"
+			(at 57.15 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7c4e4352-2153-4e19-97f1-e025f34ff153")
+		)
+		(pin "2"
+			(uuid "dfa84e15-d900-44ec-9944-08042ddd0eed")
+		)
+		(instances
+			(project "CX_buttonlight_v2"
+				(path "/a6c7f972-13d1-471d-8078-ec61320b86a9"
+					(reference "F1")
 					(unit 1)
 				)
 			)
