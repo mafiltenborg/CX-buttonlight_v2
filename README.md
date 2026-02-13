@@ -6,4 +6,4 @@ Building on the learnings from [its predecessor](https://github.com/mafiltenborg
 
 Because this device does not use the OE bulb holder (made out of yellow plastic) it allows for the use of any colour LED you fancy. The green light in the ashtray and the green light near the ignition key and the green light emanating from the dashboard computer can now be accompanied by green light from the buttons, making a unison expression. Some might want that...
 
-Update: This device has now been superseded with  one that uses a different LED driving principle (constant current) and even lower power consumption. Go to [CX buttonlight v3](https://github.com/mafiltenborg/CX_buttonlight) to learn more.
+Update: This device has now been superseded with  one that uses a different LED driving principle (constant current) and even lower power consumption. Go to [CX buttonlight v3](https://github.com/mafiltenborg/cx_buttonlight_v3) to learn more.
